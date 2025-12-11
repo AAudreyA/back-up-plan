@@ -1,0 +1,212 @@
+/* App container: left sidebar + search panel + main content */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #121212;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 1px; /* separation between columns */
+}
+
+/* Sidebar (left) */
+.sidebar {
+  flex: 0 0 220px;
+  max-width: 25%;
+  min-width: 180px;
+  border-right: 2px solid #2c2c2c;
+  padding: 1rem;
+  background: #1DB954;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  color: black;
+}
+
+/* Search panel (middle column) */
+.search-panel {
+  flex: 0 1 260px; /* allow shrinking if screen is smaller */
+  width: 260px;     /* base width */
+  max-width: 270px;   /* grow up to 30% of screen */
+  min-width: 220px; /* never smaller than 220px */
+  border-right: 2px solid #2c2c2c;
+  padding: 1rem;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  word-break: break-word;  /* wrap long words */
+}
+/* Search results list items */
+.results-list li {
+  white-space: normal;       /* allow line breaks */
+  overflow-wrap: anywhere;   /* wrap really long words */
+  max-width: 90%;           /* stay inside panel */
+}
+
+.results-list li:hover {
+  background: #1db95452;
+}
+
+/* Playlist inside sidebar */
+.sidebar .playlist {
+  flex: 1; /* take full height of sidebar */
+  overflow-y: auto;
+}
+
+/* Playlist items */
+.sidebar .playlist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar .playlist li {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.sidebar .playlist li:hover {
+  background: #1DB954;
+}
+
+
+/* Main content (right column) */
+.main {
+  flex: 1; /* take remaining space */
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: #1DB954;
+  color: black;
+  overflow-y: auto;
+}
+
+/* Media query: stack for smaller screens */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar, .search-panel, .main {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 100%;
+    border-right: none;
+    border-bottom: 2px solid white;
+  }
+}
+  /* Base button style (apply to ALL buttons) */
+
+.btn {
+  padding: 0.4rem 1rem;
+  border: 10px;
+  border-radius: 6px;
+  border-color: black;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background:#1DB954;            /* primary blue */
+  color: black;
+  transition: 0.2s ease;
+  margin-left: 3px;
+}
+
+/* Hover */
+.btn:hover {
+  background:#10672e;  
+  border: none;          /* darker blue */
+}
+
+/* Disabled */
+.btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Secondary button (gray) */
+.btn-secondary {
+  background: #444;
+  color: #eee;
+}
+.btn-secondary:hover {
+  background: #555;
+}
+
+.text_area{
+  background: #0b4c22;
+  border: #121212;
+  border-radius: 5px;
+}
+
+
+/* Center login screen */
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex !important;
+  justify-content: center !important;   /* center left-right */
+  align-items: center !important;       /* center top-bottom */
+  background: #0f0f0f;       /* match your app theme */
+}
+
+/* Login box styling */
+.login-box {
+  background:#0b4c22;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  text-align: center;
+  color: #0f0f0f;
+}
+
+.login-box input {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #222;
+  color: white;
+}
+
+/* Optional: hover effect for inputs */
+.login-box input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.flow-circular-regular {
+  font-family: "Flow Circular", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Header row: flex layout */
+.header {
+  display: flex;
+  justify-content: space-between; /* heading left, button right */
+  align-items: center;            /* vertical alignment */
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Header title */
+.header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+/* Optional: small spacing for button on small screens */
+.header button {
+  margin-left: 1rem;
+}
+
+
+
+
